@@ -4,7 +4,7 @@ import math
 
 # --- ページ設定 ---
 st.set_page_config(page_title="競馬・投資配分シミュレーター", layout="wide")
-st.title("🏇 安定投シミュレーション")
+st.title("🏇 安定投資シミュレーション")
 
 # --- 設定エリア（サイドバー） ---
 with st.sidebar:
@@ -17,8 +17,8 @@ with st.sidebar:
     【入力ヒント】
     「馬番 人気 馬名 オッズ」の順で貼り付けてください。
     例：
-    1 3 サトノダイヤモンド 2.5
-    7 1 キタサンブラック 1.8
+   4 3 ミュージアムマイル 3.8
+   10 12 コスモキュランダ 111.5
     """)
 
 # --- メイン：データ入力エリア ---
@@ -27,7 +27,7 @@ raw_input = st.text_area(
     "入力エリア（馬番 人気 馬名 オッズ の順）", 
     value="", 
     height=250,
-    placeholder="1 3 サトノダイヤモンド 2.5\n7 1 キタサンブラック 1.8"
+    placeholder=" 4 3 ミュージアムマイル 3.8\n10 12 コスモキュランダ 111.5"
 )
 
 if st.button("計算を実行"):
@@ -112,3 +112,4 @@ if st.button("計算を実行"):
 
             with st.expander("📊 すべての計算詳細（スキップ含む）を表示"):
                 st.table(all_results)
+
